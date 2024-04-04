@@ -12,5 +12,5 @@ quiz.tex: quiz.md pandoc-quiz-template.tex quiz-filter.lua instructions.tex
 		--template=./pandoc-quiz-template.tex --pdf-engine=lualatex
 
 quiz.pdf: quiz.tex
-	lualatex quiz.tex
-	lualatex quiz.tex
+	latex quiz.tex
+	latex quiz.tex

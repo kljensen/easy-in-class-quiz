@@ -31,6 +31,12 @@ You'll need `latex`, `pandoc`, `grep`, and `make` on your system.
 Customize `quiz.md` with your own questions. These look like this:
 
 ```markdown
+7. A 1 gig file `foo1.csv` is appended to itself to make a 2 gig file `foo2.csv`. What is true of the `SHA1` hash of `foo1.csv` and `foo2.csv`?
+- They are the same.
+- The hash of `foo2.csv` is the hash of `foo1.csv` appended to itself.
+- They are different but of the same length. (*)
+- The hash of `foo2.csv` is twice as long as the hash of `foo1.csv`. 
+
 8. What is common about git and blockchains? 
 - They both use a Merkle tree. (*)
 - They both use a linked list.

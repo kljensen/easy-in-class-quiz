@@ -1,7 +1,15 @@
 # Easy in-class Quiz
 
 This repo shows how to make a 1-page multiple choice quiz in Markdown. The quiz is designed to be printed on a single sheet of paper, front and back. The front side has the instructions and the back side has the questions.
-See [this example output](https://github.com/kljensen/easy-in-class-quiz/blob/main/docs/example-output.pdf)
+See [this example PDF output](https://github.com/kljensen/easy-in-class-quiz/blob/main/docs/example-output.pdf)
+and the thumbnails below.
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <img src="./docs/page-1.png" alt="Page Preview 1" style="width: 150px; height: auto;">
+    <img src="docs/page-2.png" alt="Page Preview 2" style="width: 150px; height: auto;">
+    <img src="docs/page-3.png" alt="Page Preview 3" style="width: 150px; height: auto;">
+</div>
+
 
 ## Motivation
 

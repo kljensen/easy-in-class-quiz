@@ -1,0 +1,125 @@
+\documentclass[letterpaper, 10pt]{exam}
+
+% Includes
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{microtype}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[randomize]{exam-randomizechoices}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{positioning,chains}
+
+% Basic settings
+\geometry{margin=1in}
+\setrandomizerseed{42}
+
+% New commands
+\newcommand{\repeatntimes}[2]{
+   \newcount\i
+   \i=0
+   \newtoks\ans
+   \loop
+      \ans=\expandafter{\the\ans #2}
+      \advance\i by 1
+      \ifnum\i<#1\repeat
+   \the\ans
+}
+
+\newcommand{\countRepeatntimes}[2]{
+   \newcount\i
+   \i=0
+   \newtoks\ans
+   \loop
+      \advance\i by 1
+      \ans=\expandafter{\the\ans #2}
+      \ifnum\i<#1\repeat
+   \the\ans
+}
+
+\newcounter{problem}
+\newcounter{bubblechoice}
+\newcommand{\generateTable}[1]{%
+  \countRepeatntimes{#1}{\stepcounter{problem}\makebox[2ex][r]{\theproblem.}%\indent
+  \setcounter{bubblechoice}{0}%
+  \repeatntimes{4}{\stepcounter{bubblechoice}\textcolor{black!35}{%
+    \raisebox{0.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+      \scalebox{.6}{\footnotesize \Alph{bubblechoice}}}{$$\bigcirc$$}}}} }\par
+  }
+}
+
+\def\sampleblock{%
+  \makebox[5.1ex]{}
+  \stepcounter{bubblechoice}\textcolor{black!35}{%
+   \raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{bubblechoice}}}{$$\bigcirc$$}}}}
+  \stepcounter{bubblechoice}\textcolor{black!35}{%
+   \raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{bubblechoice}}}{$$\bigcirc$$}}}}
+  \stepcounter{bubblechoice}\textcolor{black!35}{%
+   \smash{\raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{-2.5pt}{%
+    \scalebox{8}{\color{black}$$\cdot$$}}{$$\bigcirc$$}}}}}
+  \stepcounter{bubblechoice}\textcolor{black!35}{%
+   \raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{bubblechoice}}}{$$\bigcirc$$}}}}
+\par}
+\voffset=\dimexpr\voffset+.5in
+\textheight=\dimexpr\textheight-.5in
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Make the choices less indented
+\renewcommand{\choiceshook}{%
+  \setlength{\leftmargin}{14pt}%
+}
+
+% Title
+\title{$class$\\
+\emph{$title$}
+}
+$if(date)$\date{$date$}$endif$
+
+% Document body
+\begin{document}
+\pagestyle{empty}
+\maketitle
+
+% Line for name in the upper right
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north east, xshift=-2cm, yshift=-4cm] at (current page.north east) {%
+    \textbf{name:} \makebox[5cm]{\rule{0pt}{2ex}\hrulefill}%
+  };
+\end{tikzpicture}
+
+\section*{Instructions}
+\input{instructions}
+
+\vspace{1in}
+\centering
+
+% Notice that this is a variable Pandoc will fill in. You
+% must pass it in with the metadata option.
+\generateTable{$total_questions$}
+\pagebreak
+
+\begin{multicols}{2}
+\begin{questions}
+
+\small\raggedright
+%---------------------------------------------- BEGIN QUIZ
+$body$
+%---------------------------------------------- END QUIZ
+
+\end{questions}
+\end{multicols}
+
+\pagebreak
+\raggedright
+\section*{Answers}
+\printkeytable
+
+\end{document}

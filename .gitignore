@@ -1,0 +1,5 @@
+*.aux
+*.log
+quiz.pdf
+quiz.tex
+instructions.tex

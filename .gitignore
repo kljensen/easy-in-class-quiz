@@ -1,5 +1,6 @@
 *.aux
 *.log
+*.dvi
 quiz.pdf
 quiz.tex
 instructions.tex

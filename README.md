@@ -5,9 +5,9 @@ See [this example PDF output](https://github.com/kljensen/easy-in-class-quiz/blo
 and the thumbnails below.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <img src="./docs/page-1.png" alt="Page Preview 1" style="width: 150px; height: auto;">
-    <img src="docs/page-2.png" alt="Page Preview 2" style="width: 150px; height: auto;">
-    <img src="docs/page-3.png" alt="Page Preview 3" style="width: 150px; height: auto;">
+    <img src="./docs/page-1.png" alt="Page Preview 1" style="width: 150px; height: auto; border: 1px solid #999;">
+    <img src="docs/page-2.png" alt="Page Preview 2" style="width: 150px; height: auto; border: 1px solid #999;">
+    <img src="docs/page-3.png" alt="Page Preview 3" style="width: 150px; height: auto; border: 1px solid #999;">
 </div>
 
 

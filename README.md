@@ -10,6 +10,8 @@ and the thumbnails below.
     <img src="docs/page-3.png" alt="Page Preview 3" style="width: 150px; height: auto;">
 </div>
 
+See also the [Typst version of this project](https://github.com/kljensen/typst-in-class-quiz),
+which is what I'm currently using day-to-day.
 
 ## Motivation
 
